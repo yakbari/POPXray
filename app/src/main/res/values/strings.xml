@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">POPXray2</string>
+    <string name="action_settings">Settings</string>
+	<string name="home_welcome">Welcome!  This software is designed to guide you through the process of interpreting a frontal chest x-ray study.  \n\nClick Start to begin.</string>
+    <string name="home_button">Start</string>
+    <string name="button_continue">Continue</string>
+    <string name="button_show_example">Help</string>
+    <string name="text_insert_question">Insert Explanation Here</string>
+    <string name="text_insert_choice">Insert Answer Choice Here</string>
+    <string name="text_skip_this">Skip this step.</string>
+    <string name="desc">Button linking to help screen</string>
+    <string name="button_back_to_outline">Back to Outline</string>
+    <string name="text_explanation">Insert explanation here.\n.\n.\n.\n.\n.\n.\n.\n.\nThis allows you to test the scroll box.</string>
+    <string name="text_reference">This is a reference.</string>
+    <string name="text_summarize_title">FINDINGS:</string>
+    <string name="text_summarize_para">Insert findings here.</string>
+    <string name="text_hint">Hint: Click the x-ray icon next to each choice to see example images.</string>
+    <string name="button_about">About This App</string>
+    <string name="text_outline_I">I: Image Characteristics and Quality</string>
+    <string name="text_outline_A">A: Airways</string>
+    <string name="text_outline_B">B: Bones</string>
+    <string name="text_outline_C">C: Cardiac Structures</string>
+    <string name="text_outline_D">D: Diaphragm</string>
+    <string name="text_outline_E">E: Edges</string>
+    <string name="text_outline_F">F: Fields</string>
+    <string name="text_outline_H">H: Hardware</string>
+    <string name="text_select_categories">Please select the desired sections.</string>
+    <string name="text_select_image">Please select an example above.</string>
+    <string name="button_back_to_selector">Back to List</string>
+    <string name="button_back">Back</string>
+    <string name="button_previous">Previous</string>
+    <string name="button_select">Select</string>
+    <string name="button_next">Next</string>
+    <string name="button_next_image">Next</string>
+    <string name="button_prev_image">Prev</string>
+    <string name="genericDesc">This is only here to remove the warning; if you cannot figure out what this object is without a description then you are a disgrace.</string>
+    
+</resources>

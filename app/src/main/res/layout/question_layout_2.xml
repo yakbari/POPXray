@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blackbkgnd"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:textAlignment="center" >
+
+    <TextView
+        android:id="@+id/Question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/linearLayout1"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="5dp"
+        android:text="@string/text_insert_question"
+        android:textColor="#FFFFFFFF"
+        android:textSize="20sp" />
+    
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="50dp" >
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/Option1"
+                android:layout_width="@dimen/question_box"
+                android:layout_height="match_parent"
+                android:checked="true"
+            
+                android:text="@string/text_insert_choice"
+                android:textColor="#FFFFFFFF"
+                android:textColorHint="#FFFFFFFF" />
+
+            <RadioButton
+                android:id="@+id/Option2"
+                android:layout_width="@dimen/question_box"
+                android:layout_height="match_parent"
+                android:text="@string/text_insert_choice"
+                android:textColor="#FFFFFFFF" />
+
+            <RadioButton
+                android:id="@+id/SkipThisStep"
+                android:layout_width="@dimen/question_box"
+                android:layout_height="match_parent"
+                android:text="@string/text_skip_this"
+                android:textColor="#FFFFFFFF" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/Example1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#00000000"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/helpicon" />
+
+            <ImageButton
+                android:id="@+id/Example2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#00000000"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/helpicon" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/HintText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Continue"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/text_hint"
+        android:textColor="#99999999" />
+
+    <Button
+        android:id="@+id/Continue"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#FF7730"
+        android:shadowColor="#434343"
+        android:text="@string/button_continue"
+        android:textColor="#FFFFFFFF"
+        android:textColorLink="#FFFFFFFF"
+        android:textStyle="bold" />
+
+</RelativeLayout>
