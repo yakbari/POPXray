@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yasminakbari.popxray.CXRActivity.QuestionFragment">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_above="@+id/bottom_panel">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Question"
+                android:id="@+id/question_text"
+                android:layout_alignTop="@+id/scrollView"
+                android:layout_centerHorizontal="true" />
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/thumbnail_scroller"
+                android:layout_marginTop="20dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/answer_layout"
+                android:layout_marginTop="20dp">
+
+                <RadioGroup
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:showDividers="middle"
+                    android:id="@+id/answer_radiogroup">
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Hint"
+                android:id="@+id/supplemental_text"
+                android:layout_marginTop="20dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_panel"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Prev"
+            android:id="@+id/previous_button"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:drawableLeft="@drawable/ic_arrow_back_white_24dp" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            android:id="@+id/skip_button"
+            android:layout_weight="1"
+            android:singleLine="true" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:id="@+id/next_button"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:drawableRight="@drawable/ic_arrow_forward_white_24dp" />
+    </LinearLayout>
+
+</RelativeLayout>
