@@ -4,7 +4,7 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
+    <style name="AppBaseTheme" parent="android:Theme.Holo">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -12,9 +12,23 @@
         -->
     </style>
 
-    <!-- Application theme. -->
+    <!-- Application and activity themes. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:actionBarStyle">@style/ActionBarColored</item>
+        <item name="android:actionBarSize">50dp</item>
+    </style>
+    <style name="AppThemeNoActionBar" parent="android:Theme.Holo.NoActionBar">
+    </style>
+    <style name="AppThemeNoLogo" parent="AppTheme">
+        <item name="android:icon">@android:color/transparent</item>
+        <item name="android:actionBarStyle">@style/ActionBarColored</item>
+        <item name="android:actionBarSize">50dp</item>
     </style>
 
+
+    <!-- Action bar theme -->
+    <style name="ActionBarColored" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@color/LowColor</item>
+    </style>
 </resources>

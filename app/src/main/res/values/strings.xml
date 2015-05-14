@@ -36,5 +36,36 @@
     <string name="button_next_image">Next</string>
     <string name="button_prev_image">Prev</string>
     <string name="genericDesc">This is only here to remove the warning; if you cannot figure out what this object is without a description then you are a disgrace.</string>
-    
+    <string name="title_activity_first_time">POPXray (new)</string>
+
+    <string name="title_activity_cxrcategory">Chest X-ray</string>
+    <string name="title_activity_cxr">Image</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_next_category">Next</string>
+    <string name="action_prev_category">Previous</string>
+
+
+
+    <string-array name="cxr_title_names">
+        <item>Image Characteristics</item>
+        <item>Airways</item>
+        <item>Bones</item>
+        <item>Cardiac Structures</item>
+        <item>Diaphragm</item>
+        <item>Edges</item>
+        <item>Fields</item>
+        <item>Hardware</item>
+    </string-array>
+    <string-array name="cxr_drawer_names">
+        <item>I: Image</item>
+        <item>A: Airways</item>
+        <item>B: Bones</item>
+        <item>C: Cardiac</item>
+        <item>D: Diaphragm</item>
+        <item>E: Edges</item>
+        <item>F: Fields</item>
+        <item>H: Hardware</item>
+    </string-array>
 </resources>

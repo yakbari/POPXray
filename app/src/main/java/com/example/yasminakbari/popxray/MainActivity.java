@@ -117,6 +117,9 @@ public class MainActivity extends Activity {
 
         // Start this party
         select_categories();
+
+        String hi = "";
+        hi = "hea";
     }
 
     public void select_categories(){
