@@ -41,7 +41,6 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Welcome to POPXray! This app will guide you through interpreting a frontal chest x-ray."
                 android:id="@+id/textView"
-                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="40dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp" />
@@ -50,33 +49,34 @@
     </ScrollView>
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:id="@+id/bottom_layout">
+        android:id="@+id/bottom_layout"
+        style="?android:attr/buttonBarStyle"
+        android:background="@color/BarColor">
 
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
+            android:text="About"
+            android:id="@+id/firsttime_about"
+            android:layout_weight="1"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="55dp"
             android:text="Get Started"
             android:id="@+id/get_started"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginBottom="10dp" />
-
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="About"
-            android:id="@+id/firsttime_about"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="10dp" />
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_weight="1"
+            android:singleLine="true" />
 
     </LinearLayout>
 

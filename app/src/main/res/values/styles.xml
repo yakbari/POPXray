@@ -16,19 +16,18 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:actionBarStyle">@style/ActionBarColored</item>
-        <item name="android:actionBarSize">50dp</item>
+        <item name="android:actionBarSize">55dp</item>
     </style>
     <style name="AppThemeNoActionBar" parent="android:Theme.Holo.NoActionBar">
     </style>
     <style name="AppThemeNoLogo" parent="AppTheme">
         <item name="android:icon">@android:color/transparent</item>
         <item name="android:actionBarStyle">@style/ActionBarColored</item>
-        <item name="android:actionBarSize">50dp</item>
+        <item name="android:actionBarSize">55dp</item>
     </style>
-
 
     <!-- Action bar theme -->
     <style name="ActionBarColored" parent="@android:style/Widget.Holo.ActionBar">
-        <item name="android:background">@color/LowColor</item>
+        <item name="android:background">@color/BarColor</item>
     </style>
 </resources>

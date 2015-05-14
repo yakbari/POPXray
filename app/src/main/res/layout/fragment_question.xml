@@ -66,35 +66,41 @@
         android:id="@+id/bottom_panel"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp">
+        style="?android:attr/buttonBarStyle"
+        android:background="@color/BarColor">
 
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:text="Prev"
             android:id="@+id/previous_button"
             android:layout_weight="1"
             android:singleLine="true"
-            android:drawableLeft="@drawable/ic_arrow_back_white_24dp" />
+            android:drawableLeft="@drawable/ic_arrow_back_white_24dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" />
 
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:text="Skip"
             android:id="@+id/skip_button"
             android:layout_weight="1"
-            android:singleLine="true" />
+            android:singleLine="true"
+            style="?android:attr/buttonBarButtonStyle" />
 
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:text="Next"
             android:id="@+id/next_button"
             android:layout_weight="1"
             android:singleLine="true"
-            android:drawableRight="@drawable/ic_arrow_forward_white_24dp" />
+            android:drawableRight="@drawable/ic_arrow_forward_white_24dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" />
     </LinearLayout>
 
 </RelativeLayout>

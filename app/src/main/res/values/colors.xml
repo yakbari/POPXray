@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="HighlightColor">#FF7730</color>
-    <color name="LowColor">#004C8F</color>
+    <color name="BarColor">#004C8F</color>
+
 </resources>
