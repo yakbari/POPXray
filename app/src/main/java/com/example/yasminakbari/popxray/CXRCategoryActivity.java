@@ -137,6 +137,8 @@ public class CXRCategoryActivity extends Activity implements View.OnClickListene
             SharedPreferences.Editor e = s.edit();
             e.putString("cxr_category_mask", mask);
             e.commit();
+
+            // Start CXRActivity with category mask
             Bundle extras = new Bundle();
             extras.putString("category_mask", mask);
             Intent intent = new Intent(this, CXRActivity.class);

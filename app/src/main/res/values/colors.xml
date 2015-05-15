@@ -2,5 +2,5 @@
 <resources>
     <color name="HighlightColor">#FF7730</color>
     <color name="BarColor">#004C8F</color>
-
+    <color name="LinkColor">#3BBAFF</color>
 </resources>

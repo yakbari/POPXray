@@ -58,6 +58,7 @@
         <item>Fields</item>
         <item>Hardware</item>
     </string-array>
+
     <string-array name="cxr_drawer_names">
         <item>I: Image</item>
         <item>A: Airways</item>
@@ -68,4 +69,7 @@
         <item>F: Fields</item>
         <item>H: Hardware</item>
     </string-array>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

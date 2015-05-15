@@ -1,7 +1,9 @@
 package com.example.yasminakbari.popxray;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
@@ -30,6 +32,7 @@ public class FirstTimeActivity extends Activity implements View.OnClickListener 
         } else {
             // First time
             // Debug: we don't save this so it shows up every time
+
 //            SharedPreferences.Editor e = sharedPref.edit();
 //            e.putBoolean("first_time", false);
 //            e.commit();
@@ -58,7 +61,20 @@ public class FirstTimeActivity extends Activity implements View.OnClickListener 
     }
 
     private void showAbout() {
+        View aboutView = getLayoutInflater().inflate(R.layout.dialog_about, null, false);
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle(R.string.app_name);
+        builder.setView(aboutView);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // Noop
+            }
+        });
+        builder.create();
+        builder.show();
     }
 }
 

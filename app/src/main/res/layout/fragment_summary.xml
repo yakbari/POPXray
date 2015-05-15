@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yasminakbari.popxray.SummaryFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView4"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_above="@+id/bottom_panel">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/bottom_panel">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Summary"
+                android:id="@+id/textView5" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_panel"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/BarColor" >
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="55dp"
+            android:text="Prev"
+            android:id="@+id/previous_button"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:drawableLeft="@drawable/ic_arrow_back_white_24dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" />
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="55dp"
+            android:id="@+id/null_button"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:visibility="invisible" />
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="55dp"
+            android:text="New"
+            android:id="@+id/new_button"
+            android:layout_weight="1"
+            android:singleLine="true" />
+    </LinearLayout>
+
+</RelativeLayout>

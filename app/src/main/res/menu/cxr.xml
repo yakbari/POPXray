@@ -4,11 +4,11 @@
     tools:context="com.example.yasminakbari.popxray.CXRActivity">
     <item android:id="@+id/action_next_category"
         android:title="@string/action_next_category"
-        android:icon="@drawable/ic_expand_more_white_36dp"
+        android:icon="@drawable/ic_expand_more_white_32dp"
         android:showAsAction="always" />
     <item android:id="@+id/action_prev_category"
         android:title="@string/action_prev_category"
-        android:icon="@drawable/ic_expand_less_white_36dp"
+        android:icon="@drawable/ic_expand_less_white_32dp"
         android:showAsAction="always" />
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />

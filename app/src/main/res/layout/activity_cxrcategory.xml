@@ -7,7 +7,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/scrollView2"
-        android:layout_above="@+id/cxrcategory_continue">
+        android:layout_above="@+id/bottom_bar">
 
         <LinearLayout
             android:orientation="vertical"
@@ -116,19 +116,29 @@
         </LinearLayout>
     </ScrollView>
 
-    <Button
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="55dp"
-        android:text="Next"
-        android:id="@+id/cxrcategory_continue"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:drawableRight="@drawable/ic_arrow_forward_white_24dp"
-        android:gravity="center"
-        style="?android:attr/buttonBarButtonStyle"
-        android:singleLine="true"
-        android:paddingLeft="30dp"
-        android:paddingRight="15dp"
-        android:background="@color/BarColor" />
+        android:focusableInTouchMode="false"
+        android:id="@+id/bottom_bar"
+        android:background="@color/BarColor">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="55dp"
+            android:text="Next"
+            android:id="@+id/cxrcategory_continue"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:drawableRight="@drawable/ic_arrow_forward_white_24dp"
+            android:gravity="center"
+            style="?android:attr/buttonBarButtonStyle"
+            android:singleLine="true"
+            android:paddingLeft="30dp"
+            android:paddingRight="15dp" />
+    </LinearLayout>
 
 </RelativeLayout>

@@ -7,10 +7,11 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/scrollView"
+        android:layout_above="@+id/bottom_panel"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:layout_above="@+id/bottom_panel">
+        android:layout_marginTop="20dp">
 
         <LinearLayout
             android:orientation="vertical"
@@ -26,26 +27,14 @@
                 android:layout_alignTop="@+id/scrollView"
                 android:layout_centerHorizontal="true" />
 
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/thumbnail_scroller"
-                android:layout_marginTop="20dp" />
-
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:id="@+id/answer_layout"
-                android:layout_marginTop="20dp">
-
-                <RadioGroup
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:showDividers="middle"
-                    android:id="@+id/answer_radiogroup">
-
-                </RadioGroup>
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp">
 
             </LinearLayout>
 
