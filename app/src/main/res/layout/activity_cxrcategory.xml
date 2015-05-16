@@ -3,118 +3,31 @@
     android:layout_height="match_parent"
     tools:context="com.example.yasminakbari.popxray.CXRCategoryActivity">
 
-    <ScrollView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/scrollView2"
-        android:layout_above="@+id/bottom_bar">
+        android:layout_above="@+id/bottom_bar"
+        android:padding="20dp">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_above="@+id/cxrcategory_continue"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Frontal Chest X-ray"
+            android:id="@+id/textView6"
+            android:layout_gravity="center_horizontal" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Select the desired sections:"
-                android:id="@+id/textView2"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="20dp" />
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/category_list"
+            android:choiceMode="multipleChoice"
+            android:drawSelectorOnTop="false"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true" />
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="I: Image Characteristics"
-                android:id="@+id/image_characteristics"
-                android:checked="false"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:singleLine="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="5dp" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A: Airways"
-                android:id="@+id/airways"
-                android:checked="false"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:singleLine="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="5dp" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="B: Bones"
-                android:id="@+id/bones"
-                android:checked="false"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:singleLine="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="5dp" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="C: Cardiac"
-                android:id="@+id/cardiac"
-                android:checked="false"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:singleLine="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="5dp" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="D: Diaphragm"
-                android:id="@+id/diaphragm"
-                android:checked="false"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:singleLine="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="5dp" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="E: Edges"
-                android:id="@+id/edges"
-                android:checked="false"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:singleLine="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="5dp" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="F: Fields"
-                android:id="@+id/fields"
-                android:checked="false"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:singleLine="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="5dp" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="H: Hardware"
-                android:id="@+id/hardware"
-                android:checked="false"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:singleLine="true"
-                android:layout_marginLeft="10dp" />
-
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"

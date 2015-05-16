@@ -8,15 +8,13 @@
         android:layout_height="fill_parent"
         android:id="@+id/scrollView"
         android:layout_above="@+id/bottom_panel"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp">
+        android:layout_centerHorizontal="true">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:padding="20dp">
 
             <TextView
                 android:layout_width="fill_parent"

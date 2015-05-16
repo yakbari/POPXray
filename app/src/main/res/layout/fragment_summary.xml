@@ -9,16 +9,14 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/scrollView4"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
         android:layout_above="@+id/bottom_panel">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_above="@+id/bottom_panel">
+            android:layout_above="@+id/bottom_panel"
+            android:padding="20dp">
 
             <TextView
                 android:layout_width="wrap_content"

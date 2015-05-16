@@ -3,19 +3,19 @@ package com.example.yasminakbari.popxray;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.HorizontalScrollView;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -70,10 +70,15 @@ public class QuestionFragment extends Fragment implements View.OnClickListener {
         // Load answer choices
         // TODO
         mAnswerItems = new ArrayList<>(4);
-        AnswerItem ans1 = new AnswerItem(mParentActivity, mAnswerItems, "Answer 1\nsecond line of answer", 0);
-        AnswerItem ans2 = new AnswerItem(mParentActivity, mAnswerItems, "Answer 2\nsecond line of answer\n3rd line of answer", R.drawable.e_ciq2s1r1);
-        AnswerItem ans3 = new AnswerItem(mParentActivity, mAnswerItems, "Answer 3", R.drawable.e_ciq2s1r1);
-        AnswerItem ans4 = new AnswerItem(mParentActivity, mAnswerItems, "Answer 4", R.drawable.e1ci2_2);
+        AnswerItem ans1 = new AnswerItem(mParentActivity, mAnswerItems, AnswerItem.RADIO, "Answer 1\nsecond line of answer", 0);
+        AnswerItem ans2 = new AnswerItem(mParentActivity, mAnswerItems, AnswerItem.RADIO, "Answer 2\nsecond line of answer\n3rd line of answer", R.drawable.e_ciq2s1r1);
+        AnswerItem ans3 = new AnswerItem(mParentActivity, mAnswerItems, AnswerItem.RADIO, "Answer 3", R.drawable.e_ciq2s1r1);
+        AnswerItem ans4 = new AnswerItem(mParentActivity, mAnswerItems, AnswerItem.RADIO, "Answer 4", R.drawable.e1ci2_2);
+
+        ans1.setImageOnClickListener(this);
+        ans2.setImageOnClickListener(this);
+        ans3.setImageOnClickListener(this);
+        ans4.setImageOnClickListener(this);
 
         // Add all answer choices to view
         for (int i = 0; i < mAnswerItems.size(); i++) {
@@ -89,7 +94,20 @@ public class QuestionFragment extends Fragment implements View.OnClickListener {
 
         } else if (view == mSkip) {
 
+        } else if (view.getClass().getName().equalsIgnoreCase("android.widget.ImageButton")) {
+            for (int i = 0; i < mAnswerItems.size(); i++) {
+                if (view == mAnswerItems.get(i).getAnswerImage()) {
+                    int answerChoice = i;
+                    showExample(answerChoice);
+                }
+            }
         }
+    }
+
+    private void showExample(int answerChoice) {
+        Intent i = new Intent(mParentActivity, ExampleActivity.class);
+        i.putExtra("answer_choice", answerChoice);
+        startActivity(i);
     }
 
     @Override
@@ -99,13 +117,17 @@ public class QuestionFragment extends Fragment implements View.OnClickListener {
     }
 
     private static class AnswerItem extends LinearLayout {
-        private RadioButton mAnswerRadio;
+        public static int RADIO = 1;
+        public static int CHECK = 2;
+        private CompoundButton mAnswerRadioCheck;
+        private int mAnswerType;
         private ImageButton mAnswerImage;
         private ArrayList<AnswerItem> mAnswerGroup;
 
-        public AnswerItem(Context c, ArrayList<AnswerItem> answerGroup, String text, int imageResource) {
+        public AnswerItem(Context c, ArrayList<AnswerItem> answerGroup, int answerType, String text, int imageResource) {
             super(c);
             mAnswerGroup = answerGroup;
+            mAnswerType = answerType;
 
             // Add itself to the answer group
             answerGroup.add(this);
@@ -118,22 +140,26 @@ public class QuestionFragment extends Fragment implements View.OnClickListener {
             this.setMinimumHeight(THUMBNAIL_SIZE);
             this.setOrientation(LinearLayout.HORIZONTAL);
 
-            // Create radio button
-            mAnswerRadio = new RadioButton(c);
-            mAnswerRadio.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
-            mAnswerRadio.setOnClickListener(new OnClickListener() {
+            // Create radio or check button
+            if (mAnswerType == RADIO) {
+                mAnswerRadioCheck = new RadioButton(c);
+            } else {
+                mAnswerRadioCheck = new CheckBox(c);
+            }
+            mAnswerRadioCheck.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
+            mAnswerRadioCheck.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     // Uncheck all other radio buttons in the answer group
                     for (int i = 0; i < mAnswerGroup.size(); i++) {
-                        if (AnswerItem.this.mAnswerGroup.get(i).getAnswerRadio() != AnswerItem.this.getAnswerRadio()) {
+                        if (AnswerItem.this.mAnswerGroup.get(i).getAnswerRadio() != AnswerItem.this.getAnswerRadio() && AnswerItem.this.mAnswerGroup.get(i).getAnswerType() == RADIO) {
                             AnswerItem.this.mAnswerGroup.get(i).getAnswerRadio().setChecked(false);
                         }
                     }
                 }
             });
             setText(text);
-            this.addView(mAnswerRadio);
+            this.addView(mAnswerRadioCheck);
 
             // Create image button
             mAnswerImage = new ImageButton(c);
@@ -142,7 +168,7 @@ public class QuestionFragment extends Fragment implements View.OnClickListener {
         }
 
         public void setText(String text) {
-            mAnswerRadio.setText(text);
+            ((CompoundButton)mAnswerRadioCheck).setText(text);
         }
 
         public void setImage(int resource) {
@@ -164,16 +190,20 @@ public class QuestionFragment extends Fragment implements View.OnClickListener {
             mAnswerImage.setLayoutParams(lp);
         }
 
-        public void setOnImageClickListener(OnClickListener listener) {
+        public void setImageOnClickListener(OnClickListener listener) {
             mAnswerImage.setOnClickListener(listener);
         }
 
-        public RadioButton getAnswerRadio() {
-            return mAnswerRadio;
+        public CompoundButton getAnswerRadio() {
+            return mAnswerRadioCheck;
         }
 
         public ImageButton getAnswerImage() {
             return mAnswerImage;
+        }
+
+        public int getAnswerType() {
+            return mAnswerType;
         }
     }
 }

@@ -6,60 +6,53 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ListView;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 public class CXRCategoryActivity extends Activity implements View.OnClickListener {
     // UI Elements
-    private CheckBox mImageCharacteristics, mAirways, mBones, mCardiac, mDiaphragm, mEdges,
-            mFields, mHardware;
+    private ListView mCategoryList;
     private Button mContinue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cxrcategory);
-        mImageCharacteristics = (CheckBox)findViewById(R.id.image_characteristics);
-        mAirways = (CheckBox)findViewById(R.id.airways);
-        mBones = (CheckBox)findViewById(R.id.bones);
-        mCardiac = (CheckBox)findViewById(R.id.cardiac);
-        mDiaphragm = (CheckBox)findViewById(R.id.diaphragm);
-        mEdges = (CheckBox)findViewById(R.id.edges);
-        mFields = (CheckBox)findViewById(R.id.fields);
-        mHardware = (CheckBox)findViewById(R.id.hardware);
+
+        mCategoryList = (ListView)findViewById(R.id.category_list);
+
         mContinue = (Button)findViewById(R.id.cxrcategory_continue);
         mContinue.setOnClickListener(this);
 
+        // Get default CXR category list
+        List<String> categoryNames = Arrays.asList(getResources().getStringArray(R.array.cxr_category_names));
+
         // Restore saved category mask
         SharedPreferences s = getSharedPreferences("POPXray", Context.MODE_PRIVATE);
-        String mask = s.getString("cxr_category_mask", "11111111");
-        if (mask.charAt(0) != '0') {
-            mImageCharacteristics.setChecked(true);
-        }
-        if (mask.charAt(1) != '0') {
-            mAirways.setChecked(true);
-        }
-        if (mask.charAt(2) != '0') {
-            mBones.setChecked(true);
-        }
-        if (mask.charAt(3) != '0') {
-            mCardiac.setChecked(true);
-        }
-        if (mask.charAt(4) != '0') {
-            mDiaphragm.setChecked(true);
-        }
-        if (mask.charAt(5) != '0') {
-            mEdges.setChecked(true);
-        }
-        if (mask.charAt(6) != '0') {
-            mFields.setChecked(true);
-        }
-        if (mask.charAt(7) != '0') {
-            mHardware.setChecked(true);
+        // Get default mask string
+        char[] default_mask = new char[categoryNames.size()];
+        Arrays.fill(default_mask, '1');
+        String mask = s.getString("cxr_category_mask", new String(default_mask));
+
+        // Set listview's adapter
+        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(this, R.layout.list_category_item, categoryNames);
+        mCategoryList.setAdapter(listViewAdapter);
+
+        // Restore which items are checked and which are not
+        if (mask.length() == listViewAdapter.getCount()) {
+            for (int i = 0; i < listViewAdapter.getCount(); i++) {
+                mCategoryList.setItemChecked(i, mask.charAt(i) != '0');
+            }
         }
     }
 
@@ -91,45 +84,12 @@ public class CXRCategoryActivity extends Activity implements View.OnClickListene
         if (view == mContinue) {
             // Build category mask
             String mask = "";
-            if (mImageCharacteristics.isChecked()) {
-                mask += "1";
-            } else {
-                mask += "0";
-            }
-            if (mAirways.isChecked()) {
-                mask += "1";
-            } else {
-                mask += "0";
-            }
-            if (mBones.isChecked()) {
-                mask += "1";
-            } else {
-                mask += "0";
-            }
-            if (mCardiac.isChecked()) {
-                mask += "1";
-            } else {
-                mask += "0";
-            }
-            if (mDiaphragm.isChecked()) {
-                mask += "1";
-            } else {
-                mask += "0";
-            }
-            if (mEdges.isChecked()) {
-                mask += "1";
-            } else {
-                mask += "0";
-            }
-            if (mFields.isChecked()) {
-                mask += "1";
-            } else {
-                mask += "0";
-            }
-            if (mHardware.isChecked()) {
-                mask += "1";
-            } else {
-                mask += "0";
+            for (int i = 0; i < mCategoryList.getChildCount(); i++) {
+                if (((CheckBox)mCategoryList.getChildAt(i)).isChecked()) {
+                    mask += "1";
+                } else {
+                    mask += "0";
+                }
             }
 
             // Save category mask

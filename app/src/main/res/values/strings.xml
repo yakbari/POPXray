@@ -46,8 +46,20 @@
     <string name="action_next_category">Next</string>
     <string name="action_prev_category">Previous</string>
 
+    <!-- Shown in CXRCategoryActivity's category list -->
+    <string-array name="cxr_category_names">
+        <item>I: Image Characteristics</item>
+        <item>A: Airways</item>
+        <item>B: Bones</item>
+        <item>C: Cardiac</item>
+        <item>D: Diaphragm</item>
+        <item>E: Edges</item>
+        <item>F: Fields</item>
+        <item>G: Great Vessels</item>
+        <item>H: Hardware</item>
+    </string-array>
 
-
+    <!-- Shown in CXRActivity's action bar -->
     <string-array name="cxr_title_names">
         <item>Image Characteristics</item>
         <item>Airways</item>
@@ -56,9 +68,11 @@
         <item>Diaphragm</item>
         <item>Edges</item>
         <item>Fields</item>
+        <item>Great Vessels</item>
         <item>Hardware</item>
     </string-array>
 
+    <!-- Shown in CXRActivity's nav drawer -->
     <string-array name="cxr_drawer_names">
         <item>I: Image</item>
         <item>A: Airways</item>
@@ -67,9 +81,11 @@
         <item>D: Diaphragm</item>
         <item>E: Edges</item>
         <item>F: Fields</item>
+        <item>G: Great Vessels</item>
         <item>H: Hardware</item>
     </string-array>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_example">Examples</string>
 </resources>
