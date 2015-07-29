@@ -5,20 +5,27 @@ package com.example.yasminakbari.popxray;
  */
 
 import android.app.Activity;
+import java.util.ArrayList;
 
 public class ExampleSet extends Activity {
 
-    Example[] example_set;
+    ArrayList<Example> example_set;
     Question parent; // question from which this example set was born
-    int num_exes; // number of examples in this set
+    //int num_exes; // number of examples in this set
 
-    public ExampleSet(Example[] the_example_set, Question the_parent, int the_num_exes) {
+    public ExampleSet(ArrayList<Example> the_example_set, Question the_parent, int the_num_exes) {
         example_set = the_example_set;
         parent = the_parent;
-        num_exes = the_num_exes;
+        //num_exes = the_num_exes;
     }
 
-    public Example getNext(Example current){ // returns the next Example in the set after the current Example
+    public ExampleSet(ArrayList<Example> the_example_set){
+        example_set = the_example_set;
+        parent = null;
+        //num_exes = -1
+    }
+
+    /*public Example getNext(Example current){ // returns the next Example in the set after the current Example
         int i = current.index;
         int next_i = i+1;
         if (next_i < num_exes) { // this means that "current" is not the last Example in the set
@@ -40,5 +47,5 @@ public class ExampleSet extends Activity {
             System.out.println("~~~~Returning null!~~~~");
             return null;
         }
-    }
+    }*/
 }

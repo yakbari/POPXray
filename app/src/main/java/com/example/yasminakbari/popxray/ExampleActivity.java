@@ -117,14 +117,14 @@ public class ExampleActivity extends Activity implements View.OnClickListener {
         // TODO: load real example data from mQuestionAdapter
 
         // Get image resource list from example
-        ArrayList<String> imageNames = new ArrayList<>();
+        ArrayList<String> imageNames = new ArrayList<String>();
         imageNames.add("e1ci2_2");
         imageNames.add("e_ciq2s1r1");
         imageNames.add("e_ciq2s2r2");
         imageNames.add("e_ciq2s1r1");
 
 
-        mImageResId = new ArrayList<>(imageNames.size());
+        mImageResId = new ArrayList<Integer>(imageNames.size());
         for (int i = 0; i < imageNames.size(); i++) {
             try {
                 int resId = getResources().getIdentifier(imageNames.get(i), "drawable", getPackageName());
@@ -135,7 +135,7 @@ public class ExampleActivity extends Activity implements View.OnClickListener {
         }
 
         // Load thumbnails
-        mThumbnails = new ArrayList<>(mImageResId.size());
+        mThumbnails = new ArrayList<ImageButton>(mImageResId.size());
         for (int i = 0; i < mImageResId.size(); i++) {
             int resId = mImageResId.get(i);
             ImageButton newThumbnail = new ImageButton(this);
