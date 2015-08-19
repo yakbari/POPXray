@@ -84,8 +84,6 @@ public class CXRJsonReader {
             examples.add(current_ex);
         }
         reader.endArray();
-        String thing = "";
-        thing = "now";
         return new ExampleSet(examples);
 
     }
