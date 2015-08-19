@@ -69,7 +69,7 @@ public class QuestionFragment extends Fragment implements View.OnClickListener {
 
         // Load answer choices
         // TODO
-        mAnswerItems = new ArrayList<>(4);
+        mAnswerItems = new ArrayList<AnswerItem>(4);
         AnswerItem ans1 = new AnswerItem(mParentActivity, mAnswerItems, AnswerItem.RADIO, "Answer 1\nsecond line of answer", 0);
         AnswerItem ans2 = new AnswerItem(mParentActivity, mAnswerItems, AnswerItem.RADIO, "Answer 2\nsecond line of answer\n3rd line of answer", R.drawable.e_ciq2s1r1);
         AnswerItem ans3 = new AnswerItem(mParentActivity, mAnswerItems, AnswerItem.RADIO, "Answer 3", R.drawable.e_ciq2s1r1);

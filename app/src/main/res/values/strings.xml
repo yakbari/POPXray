@@ -25,6 +25,7 @@
     <string name="text_outline_D">D: Diaphragm</string>
     <string name="text_outline_E">E: Edges</string>
     <string name="text_outline_F">F: Fields</string>
+    <string name="text_outline_G">G: Great Vessels</string>
     <string name="text_outline_H">H: Hardware</string>
     <string name="text_select_categories">Please select the desired sections.</string>
     <string name="text_select_image">Please select an example above.</string>
